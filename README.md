@@ -1,13 +1,34 @@
-## 考题
-在调研过程中，经常需要对一些网站进行定向抓取。由于python包含各种强大的库，使用python做定向抓取比较简单。请使用python开发一个迷你定向抓取器mini_spider.py，实现对种子链接的广度优先抓取，并把URL长相符合特定pattern的网页保存到磁盘上。
+## kuaikan-spider
+[快看漫画](https://www.kuaikanmanhua.com)爬虫
 
 ## 程序运行
 ```python
 python mini_spider.py
 ```
 ## Dependencies
+安装[Selenium with Python](https://selenium-python.readthedocs.io/)以及相关依赖
+比如在CentOS上：
+```
+# 安装chrome浏览器
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+yum localinstall google-chrome-stable_current_x86_64.rpm
+
+# 验证chrome浏览器
+google-chrome --version
+# 输出
+Google Chrome 84.0.4147.89
+# 然后安装相应版本的chromedriver，这里是84
+```
+下载相应版本的[chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)（需要翻墙）
+解压后，将可执行文件添加进`PATH`环境变量中
+```
+chromedriver --version
+# 输出
+ChromeDriver 84.0.4147.30 (48b3e868b4cc0aa7e8149519690b6f6949e110a8-refs/branch-heads/4147@{#310})
+```
 
 ```python
+pip3 install selenium
 pip3 install beautifulsoup4
 pip3 install configparser
 pip3 install retrying
